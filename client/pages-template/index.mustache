@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{template:"{meta.title}"}</title>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        @font-face {
+            font-family: 'HeeboMedium';
+            src: url({template:"{res.fonts.medium}"});
+        }
+
+        @font-face {
+            font-family: 'HeeboRegular';
+            src: url({template:"{res.fonts.regular}"});
+        }
+
+        @font-face {
+            font-family: 'HeeboThin';
+            src: url({template:"{res.fonts.thin}"});
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+    <script>
+        window.globalData = {template:"{global.data}"}
+    </script>
+    <link rel="stylesheet" type="text/css" href={template:"{res.bundles.styles}"}>
+    <link rel="icon" type="image/png" href={template:"{meta.faviconPath}"}>
+    <script defer src={template:"{res.bundles.scripts}"}></script>
+</head>
+<body>
+<div id="main-container">
+
+</div>
+</body>
+</html>
