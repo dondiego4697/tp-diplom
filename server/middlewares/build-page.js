@@ -6,7 +6,7 @@ module.exports = (req, res) => {
 
     res.render('index', {
         meta: {
-            title: 'title'
+            title: 'Photo Style Transfer'
         },
         res: {
             bundles: {
@@ -20,7 +20,11 @@ module.exports = (req, res) => {
             }
         },
         global: {
-            data: JSON.stringify({})
+            data: JSON.stringify({
+                path: {
+                    img: '/build/res/img'
+                }
+            })
         }
     });
 };

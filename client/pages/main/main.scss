@@ -1,0 +1,22 @@
+@import "../../src/const/const.scss";
+
+body, html, #main-container  {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background: $background-color;
+}
+
+.main-panel {
+    width: 50%;
+    background: $card-color;
+    margin: auto;
+    box-shadow: 0 0 6px $card-shadow-color;
+    border-radius: 5px;
+
+    &_img-container {
+        display: flex;
+        flex-direction: row;
+    }
+}

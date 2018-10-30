@@ -1,0 +1,25 @@
+.button-container {
+
+    &_button {
+        background-color: #622386;
+        border: none;
+        display: inline-block;
+        padding: 8px 16px;
+        margin: 3px;
+        border-radius: 5px;
+        vertical-align: middle;
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        text-align: center;
+        cursor: pointer;
+        white-space: nowrap;
+        color: white;
+        outline: none;
+
+        &:hover {
+            background-color: #3a1550;
+        }
+    }
+
+}

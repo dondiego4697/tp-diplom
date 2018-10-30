@@ -23,6 +23,7 @@
     "axios": "^0.18.0",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
+    "multer": "^1.4.1",
     "mustache-express": "^1.2.5"
   },
   "devDependencies": {

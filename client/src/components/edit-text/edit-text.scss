@@ -1,0 +1,21 @@
+.edit-text-container {
+
+    &_edit-text {
+        border: none;
+        background: rgb(201, 201, 201);
+        display: inline-block;
+        padding: 8px 8px;
+        margin: 3px;
+        border-radius: 5px;
+        vertical-align: middle;
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        text-align: center;
+        white-space: nowrap;
+        color: white;
+        outline: none;
+
+    }
+
+}
