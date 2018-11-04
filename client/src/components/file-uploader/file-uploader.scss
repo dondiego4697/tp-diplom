@@ -5,11 +5,16 @@
    display: flex;
    justify-content: center;
    flex: 1;
-   outline: 3px dashed #ccc;
+   outline: 1px dashed #ccc;
    outline-offset: 5px;
    position: relative;
    height: 200px;
    margin: 25px;
+
+   & .loader-title {
+        font-size: 20px;
+        font-family: HeeboThin, sans-serif;
+   }
 
    input {
       display: none;

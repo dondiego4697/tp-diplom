@@ -55,6 +55,8 @@ export class FileUploader extends React.Component {
         }
 
         reader.readAsDataURL(file);
+
+        this.props.onChange.call(this, this);
     }
 
     getFileObject() {
@@ -81,10 +83,11 @@ export class FileUploader extends React.Component {
                 onDrop={this.onDrop}
                 style={{ outlineColor: borderColor }}>
 
+                <p className='loader-title'>{this.props.title}</p>
                 <img src={state.imageSrc} className={state.loaded ? 'loaded' : ''} />
-                <i className="icon icon-upload"
+                <i className='icon icon-upload'
                     style={{ color: iconColor }}></i>
-                <input type="file" accept="image/*" onChange={this.onFileChange} ref="input" />
+                <input type='file' accept='image/*"' onChange={this.onFileChange} ref='input'/>
             </label>
         );
     }

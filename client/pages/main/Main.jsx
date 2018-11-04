@@ -3,6 +3,10 @@ import './main.scss';
 import { FileUploader } from '../../src/components/file-uploader/FileUploader.jsx';
 import { Button } from '../../src/components/button/Button.jsx';
 import { EditText } from '../../src/components/edit-text/EditText.jsx';
+import { ToastContainer, ToastStore } from 'react-toasts';
+import BlockUi from 'react-block-ui';
+import 'react-block-ui/style.css';
+
 
 export default class Main extends React.Component {
     constructor(props) {
@@ -14,27 +18,72 @@ export default class Main extends React.Component {
             overlayColor: 'rgba(255,255,255,0.3)'
         };
 
+        this.state = {
+            base: null,
+            style: null,
+            email: null,
+            blocking: false
+        };
+
         this._onSubmit = this._onSubmit.bind(this);
         this._onChange = this._onChange.bind(this);
+        this._onBaseImageChange = this._onBaseImageChange.bind(this);
+        this._onStyleImageChange = this._onStyleImageChange.bind(this);
     }
 
     render() {
-        return (<div className="main-panel">
-            <div className='main-panel_img-container'>
-                <FileUploader id="img1" props={this._fileUploaderProps} />
-                <FileUploader id="img2" props={this._fileUploaderProps} />
-            </div>
-            <Button value='Отправить' style={{margin: '0 15px 5px 5px', float: 'right'}}
-                onClick={this._onSubmit}/>
-            <EditText ph='email' onChange={this._onChange} style={{margin: '0 0 5px 5px', float: 'right'}}/>
+        return (<div style={{width: '100%', height: '100%'}}>
+            <BlockUi style={{display: 'flex', height: '100%'}} tag="div" blocking={this.state.blocking}>
+                <div className="main-panel">
+                    <div className='main-panel_img-container'>
+                        <FileUploader title="Base image" id="imgBase"
+                            props={this._fileUploaderProps} onChange={this._onBaseImageChange} />
+                        <FileUploader title="Image with style" id="imgStyle"
+                            props={this._fileUploaderProps} onChange={this._onStyleImageChange} />
+                    </div>
+                    <Button value='Send' style={{ margin: '0 15px 5px 15px', float: 'right' }}
+                        onClick={this._onSubmit} />
+                    <EditText ph='email' onChange={this._onChange} style={{ margin: '0 0 15px 5px', float: 'right' }} />
+                    <ToastContainer store={ToastStore} position={ToastContainer.POSITION.TOP_RIGHT} lightBackground />
+                </div>
+            </BlockUi>
         </div>);
     }
 
+    _toggleBlocking() {
+        this.setState({
+            blocking: !this.state.blocking
+        });
+    }
+
     _onSubmit() {
-        console.log(123);
+        if (this.state.email && this.state.base && this.state.style) {
+            this._toggleBlocking();
+            setTimeout(() => {
+                this._toggleBlocking();
+                ToastStore.success('Result image will send you on email');
+            }, 3000);
+
+        } else {
+            ToastStore.error('Fill all fields');
+        }
     }
 
     _onChange(el) {
-        console.log(el.target.value);
+        this.setState({
+            email: el.target.value
+        })
+    }
+
+    _onBaseImageChange(el) {
+        this.setState({
+            base: el.getFileObject()
+        });
+    }
+
+    _onStyleImageChange(el) {
+        this.setState({
+            style: el.getFileObject()
+        });
     }
 }
