@@ -27,7 +27,7 @@ setInterval(async () => {
         const url = getStatusUrl(value.id);
         const response = await got.get(url);
         if (response.statusCode === 200) {
-            const imgPath = path.resolve(process.cwd(), `./imgs/${value.id}.png`);
+            const imgPath = path.resolve(__dirname, `../../imgs/${value.id}.png`);
             got.stream(url).pipe(fs.createWriteStream(imgPath));
             sendEmail(value.mail, imgPath, value.id)
             dataSet.delete(value);
