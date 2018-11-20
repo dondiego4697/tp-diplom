@@ -10,20 +10,10 @@ const mustacheExpress = require('mustache-express');
 // const path = require('path');
 
 const buildPageMiddleware = require('./middlewares/build-page');
+const addRequestMiddleware = require('./middlewares/add-request');
 
 mustache.tags = ['{template:"', '"}'];
 const paths = ['/'];
-
-/* const storage = multer.diskStorage({
-    destination: (req, file, callback) => {
-        callback(null, path.resolve(process.cwd(), './images/'));
-    },
-    filename: (req, file, callback) => {
-        callback(null, `${file.fieldname}_${Date.now()}_${file.originalname}`);
-    }
-});
- */
-// var upload = multer({storage}).array('imgUploader', 2);
 
 const app = express()
     .use(bodyParser.json())
@@ -31,17 +21,7 @@ const app = express()
     .get('/ping', (req, res) => {
         res.end();
     })
-    .post('/api/upload', (req, res) => {
-        console.log(req);
-        res.status(200).send();
-        /* upload(req, res, (error) => {
-            console.log(res);
-            if (error) {
-                return res.status(500).send(JSON.stringify({error}));
-            }
-            return res.status(200).end();
-        }); */
-    })
+    .get('/add-request', addRequestMiddleware)
     .engine('mustache', mustacheExpress())
     .set('view engine', 'mustache')
     .set('views', __dirname + '/../client/pages-template/')

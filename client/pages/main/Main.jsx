@@ -4,6 +4,7 @@ import { FileUploader } from '../../src/components/file-uploader/FileUploader.js
 import { Button } from '../../src/components/button/Button.jsx';
 import { EditText } from '../../src/components/edit-text/EditText.jsx';
 import { ToastContainer, ToastStore } from 'react-toasts';
+import * as axios from 'axios';
 import BlockUi from 'react-block-ui';
 import 'react-block-ui/style.css';
 
@@ -32,8 +33,8 @@ export default class Main extends React.Component {
     }
 
     render() {
-        return (<div style={{width: '100%', height: '100%'}}>
-            <BlockUi style={{display: 'flex', height: '100%'}} tag="div" blocking={this.state.blocking}>
+        return (<div style={{ width: '100%', height: '100%' }}>
+            <BlockUi style={{ display: 'flex', height: '100%' }} tag="div" blocking={this.state.blocking}>
                 <div className="main-panel">
                     <div className='main-panel_img-container'>
                         <FileUploader title="Base image" id="imgBase"
@@ -59,14 +60,41 @@ export default class Main extends React.Component {
     _onSubmit() {
         if (this.state.email && this.state.base && this.state.style) {
             this._toggleBlocking();
-            setTimeout(() => {
+            this._sendImages().then((res) => {
                 this._toggleBlocking();
-                ToastStore.success('Result image will send you on email');
-            }, 3000);
-
+                if (!res.data) {
+                    ToastStore.error('You have errors in data');
+                } else {
+                    ToastStore.success('Result image will send you on email');
+                }
+            });
         } else {
             ToastStore.error('Fill all fields');
         }
+    }
+
+    _sendImages() {
+        const processUrl = 'http://gpu-external01.i.smailru.net:5000/process';
+        const data = new FormData();
+
+        data.append('input', this.state.base);
+        data.append('style', this.state.style);
+
+        return axios.request({
+            method: 'post',
+            url: processUrl,
+            data: data,
+            withCredentials: true
+        }).then((res) => {
+            if (res.status === 201) {
+                return axios.request({
+                    method: 'get',
+                    url: `/add-request?id=${res.data}&mail=${this.state.email}`
+                })
+            } else {
+                return Promise.resolve({data: null});
+            }
+        });
     }
 
     _onChange(el) {
