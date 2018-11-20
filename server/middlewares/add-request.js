@@ -33,7 +33,7 @@ setInterval(async () => {
             dataSet.delete(value);
         }
     });
-}, 10 * 60 * 1);
+}, 30 * 60 * 1);
 
 module.exports = (req, res) => {
     const {id, mail} = req.query;
