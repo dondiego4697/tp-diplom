@@ -76,7 +76,7 @@ export class FileUploader extends React.Component {
 
         return (
             <label
-                className={labelClass}
+                className={`${labelClass} ${this.props.className}`}
                 onDragEnter={this.onDragEnter}
                 onDragLeave={this.onDragLeave}
                 onDragOver={this.onDragOver}
@@ -84,7 +84,7 @@ export class FileUploader extends React.Component {
                 style={{ outlineColor: borderColor }}>
 
                 <p className='loader-title'>{this.props.title}</p>
-                <img src={state.imageSrc} className={state.loaded ? 'loaded' : ''} />
+                <img src={state.imageSrc} className={state.loaded ? 'loaded' : ''}/>
                 <i className='icon icon-upload'
                     style={{ color: iconColor }}></i>
                 <input type='file' accept='image/*"' onChange={this.onFileChange} ref='input'/>

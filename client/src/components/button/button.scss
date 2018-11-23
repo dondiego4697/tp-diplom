@@ -1,12 +1,18 @@
+@keyframes button-anim {
+    0% { border: 3px #FDB731 solid; }
+    50% { border: 3px #840037 solid; }
+    100% { border: 3px #FDB731 solid;}
+  }
+
 .button-container {
 
     &_button {
-        background-color: #622386;
-        border: none;
+        background-color: #840037;
+        border: 3px solid #FDB731;
         display: inline-block;
-        padding: 8px 16px;
+        padding: 16px 16px;
         margin: 3px;
-        border-radius: 5px;
+        border-radius: 50%;
         vertical-align: middle;
         overflow: hidden;
         text-decoration: none;
@@ -16,10 +22,16 @@
         white-space: nowrap;
         color: white;
         outline: none;
-        font-family: HeeboMedium, sans-serif;
+        // font-family: HeeboMedium, sans-serif;
+        font: 15px 'Montserrat';
+        width: 100px;
+        height: 100px;
+        animation: button-anim 3s infinite;
 
         &:hover {
-            background-color: #3a1550;
+            background-color: #FDB731;
+            color: #4D163D;
+            border: 3px solid #840037;
         }
     }
 

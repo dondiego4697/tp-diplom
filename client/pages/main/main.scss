@@ -1,19 +1,39 @@
 @import "../../src/const/const.scss";
 
+@-webkit-keyframes AnimationName {
+    0%{background-position:87% 0%}
+    50%{background-position:14% 100%}
+    100%{background-position:87% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:87% 0%}
+    50%{background-position:14% 100%}
+    100%{background-position:87% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:87% 0%}
+    50%{background-position:14% 100%}
+    100%{background-position:87% 0%}
+}
+
 body, html, #main-container  {
     width: 100%;
     margin: 0;
     padding: 0;
     display: flex;
     background: $background-color;
+    background: linear-gradient(217deg, #030321, #840037, #fdb731);
+background-size: 600% 600%;
+
+-webkit-animation: AnimationName 20s ease infinite;
+-moz-animation: AnimationName 20s ease infinite;
+animation: AnimationName 20s ease infinite;
 }
 
 .main-panel {
-    width: 50%;
-    background: $card-color;
-    margin: auto;
-    box-shadow: 0 0 6px $card-shadow-color;
-    border-radius: 5px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 
     &_img-container {
         display: flex;

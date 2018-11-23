@@ -3,6 +3,7 @@ import './main.scss';
 import { FileUploader } from '../../src/components/file-uploader/FileUploader.jsx';
 import { Button } from '../../src/components/button/Button.jsx';
 import { EditText } from '../../src/components/edit-text/EditText.jsx';
+import { Title } from '../../src/components/title/Title.jsx';
 import { ToastContainer, ToastStore } from 'react-toasts';
 import * as axios from 'axios';
 import BlockUi from 'react-block-ui';
@@ -34,17 +35,18 @@ export default class Main extends React.Component {
 
     render() {
         return (<div style={{ width: '100%', height: '100%' }}>
-            <BlockUi style={{ display: 'flex', height: '100%' }} tag="div" blocking={this.state.blocking}>
+            <BlockUi style={{ display: 'flex', flexDirection: 'column', height: '100%' }} tag="div" blocking={this.state.blocking}>
+                <Title/>
                 <div className="main-panel">
                     <div className='main-panel_img-container'>
-                        <FileUploader title="Base image" id="imgBase"
+                        <FileUploader title="BASE IMAGE" id="imgBase" className='uploader-right'
                             props={this._fileUploaderProps} onChange={this._onBaseImageChange} />
-                        <FileUploader title="Image with style" id="imgStyle"
+                        <FileUploader title="STYLE" id="imgStyle" className='uploader-left'
                             props={this._fileUploaderProps} onChange={this._onStyleImageChange} />
                     </div>
-                    <Button value='Send' style={{ margin: '0 15px 5px 15px', float: 'right' }}
+                    <Button value='SEND' style={{ position: 'fixed', bottom: 15, right: 15 }}
                         onClick={this._onSubmit} />
-                    <EditText ph='email' onChange={this._onChange} style={{ margin: '0 0 15px 5px', float: 'right' }} />
+                    <EditText ph='email' onChange={this._onChange} style={{ position: 'fixed', bottom: 30, right: 131 }} />
                     <ToastContainer store={ToastStore} position={ToastContainer.POSITION.TOP_RIGHT} lightBackground />
                 </div>
             </BlockUi>
