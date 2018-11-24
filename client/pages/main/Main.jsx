@@ -63,12 +63,14 @@ export default class Main extends React.Component {
         if (this.state.email && this.state.base && this.state.style) {
             this._toggleBlocking();
             this._sendImages().then((res) => {
-                this._toggleBlocking();
-                if (!res.data) {
-                    ToastStore.error('You have errors in data');
-                } else {
-                    ToastStore.success('Result image will send you on email');
-                }
+                setTimeout(() => {
+                    this._toggleBlocking();
+                    if (!res.data) {
+                        ToastStore.error('You have errors in data');
+                    } else {
+                        ToastStore.success('Result image will send you on email');
+                    }
+                }, 1500);
             });
         } else {
             ToastStore.error('Fill all fields');
