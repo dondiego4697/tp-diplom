@@ -18,6 +18,11 @@
    width: 300px;
    margin: 25px auto;
    animation: uploader-border 3s infinite;
+   min-height: 300px;
+
+   @media screen and (max-width: 960px) {
+    margin: auto;
+  }
 
    & .loader-title {
       color: white;

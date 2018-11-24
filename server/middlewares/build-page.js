@@ -6,7 +6,7 @@ module.exports = (req, res) => {
 
     res.render('index', {
         meta: {
-            title: 'Photo Style Transfer'
+            title: 'Face Transfer'
         },
         res: {
             bundles: {

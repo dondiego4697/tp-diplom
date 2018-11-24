@@ -9,11 +9,13 @@ export class Button extends React.Component {
     render() {
         return (
             <div className='button-container'>
-                <button onClick={this.props.onClick}
-                    style={this.props.style}
-                    className='button-container_button'>
-                    {this.props.value}
-                </button>
+                <div className='button-container__align'>
+                    <button onClick={this.props.onClick}
+                        style={this.props.style}
+                        className='button-container_button'>
+                        {this.props.value}
+                    </button>
+                </div>
             </div>
         );
     }

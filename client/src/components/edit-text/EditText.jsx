@@ -9,10 +9,12 @@ export class EditText extends React.Component {
     render() {
         return (
             <div className='edit-text-container'>
-                <input style={this.props.style}
-                    placeholder={this.props.ph}
-                    className='edit-text-container_edit-text'
-                    onChange={this.props.onChange}/>
+                <div className='edit-text-container__align'>
+                    <input style={this.props.style}
+                        placeholder={this.props.ph}
+                        className='edit-text-container_edit-text'
+                        onChange={this.props.onChange} />
+                </div>
             </div>
         );
     }

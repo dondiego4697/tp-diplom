@@ -44,9 +44,9 @@ export default class Main extends React.Component {
                         <FileUploader title="STYLE" id="imgStyle" className='uploader-left'
                             props={this._fileUploaderProps} onChange={this._onStyleImageChange} />
                     </div>
+                    <EditText ph='email' onChange={this._onChange} style={{ position: 'fixed', bottom: 30, right: 131 }} />
                     <Button value='SEND' style={{ position: 'fixed', bottom: 15, right: 15 }}
                         onClick={this._onSubmit} />
-                    <EditText ph='email' onChange={this._onChange} style={{ position: 'fixed', bottom: 30, right: 131 }} />
                     <ToastContainer store={ToastStore} position={ToastContainer.POSITION.TOP_RIGHT} lightBackground />
                 </div>
             </BlockUi>

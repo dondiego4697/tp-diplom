@@ -19,6 +19,16 @@
         width: 250px;
         font: 15px 'Montserrat';
         animation: button-anim 3s infinite;
+
+        @media screen and (max-width: 960px) {
+            position: relative !important;
+            right: unset !important;
+            bottom: unset !important;
+            margin: auto !important;
+        }
     }
 
+    &__align {
+        display: flex;
+    }
 }
