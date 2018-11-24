@@ -5,6 +5,15 @@
     height: 300px;
 }
 
+.title-block h2 {
+    font: 50px 'Montserrat';
+    text-align: center;
+    color: #BD0034;
+    @media screen and (min-width: 961px) {
+        display: none;
+    }
+}
+
 .title-block svg {
     display: block;
     font: 7em 'Montserrat';
@@ -13,7 +22,8 @@
     margin: 0 auto;
 
     @media screen and (max-width: 960px) {
-        // height: unset;
+        height: unset;
+        display: none;
     }
 }
 

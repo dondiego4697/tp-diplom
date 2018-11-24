@@ -36,7 +36,7 @@ export default class Main extends React.Component {
     render() {
         return (<div style={{ width: '100%', height: '100%' }}>
             <BlockUi style={{ display: 'flex', flexDirection: 'column', height: '100%' }} tag="div" blocking={this.state.blocking}>
-                <Title/>
+                <Title />
                 <div className="main-panel">
                     <div className='main-panel_img-container'>
                         <FileUploader title="BASE IMAGE" id="imgBase" className='uploader-right'
@@ -44,11 +44,11 @@ export default class Main extends React.Component {
                         <FileUploader title="STYLE" id="imgStyle" className='uploader-left'
                             props={this._fileUploaderProps} onChange={this._onStyleImageChange} />
                     </div>
-                    <EditText ph='email' onChange={this._onChange} style={{ position: 'fixed', bottom: 30, right: 131 }} />
-                    <Button value='SEND' style={{ position: 'fixed', bottom: 15, right: 15 }}
-                        onClick={this._onSubmit} />
                     <ToastContainer store={ToastStore} position={ToastContainer.POSITION.TOP_RIGHT} lightBackground />
                 </div>
+                <EditText ph='email' onChange={this._onChange} style={{ position: 'fixed', bottom: 30, right: 131 }} />
+                <Button value='SEND' style={{ position: 'fixed', bottom: 15, right: 15 }}
+                    onClick={this._onSubmit} />
             </BlockUi>
         </div>);
     }
@@ -96,7 +96,7 @@ export default class Main extends React.Component {
                     url: `/add-request?id=${res.data}&mail=${this.state.email}`
                 })
             } else {
-                return Promise.resolve({data: null});
+                return Promise.resolve({ data: null });
             }
         });
     }
