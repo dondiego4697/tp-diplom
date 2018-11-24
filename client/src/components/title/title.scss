@@ -9,6 +9,33 @@
     font: 50px 'Montserrat';
     text-align: center;
     color: #BD0034;
+
+    text-shadow:
+		-0   -2px 0   #FFFFFF,
+		 0   -2px 0   #FFFFFF,
+		-0    2px 0   #FFFFFF,
+		 0    2px 0   #FFFFFF,
+		-2px -0   0   #FFFFFF,
+		 2px -0   0   #FFFFFF,
+		-2px  0   0   #FFFFFF,
+		 2px  0   0   #FFFFFF,
+		-1px -2px 0   #FFFFFF,
+		 1px -2px 0   #FFFFFF,
+		-1px  2px 0   #FFFFFF,
+		 1px  2px 0   #FFFFFF,
+		-2px -1px 0   #FFFFFF,
+		 2px -1px 0   #FFFFFF,
+		-2px  1px 0   #FFFFFF,
+		 2px  1px 0   #FFFFFF,
+		-2px -2px 0   #FFFFFF,
+		 2px -2px 0   #FFFFFF,
+		-2px  2px 0   #FFFFFF,
+		 2px  2px 0   #FFFFFF,
+		-2px -2px 0   #FFFFFF,
+		 2px -2px 0   #FFFFFF,
+		-2px  2px 0   #FFFFFF,
+		 2px  2px 0   #FFFFFF;
+
     @media screen and (min-width: 961px) {
         display: none;
     }
