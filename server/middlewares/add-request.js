@@ -27,7 +27,7 @@ setInterval(async () => {
         try {
             const url = getStatusUrl(value.id);
             const response = await got.get(url);
-            fs.appendFile(path.resolve(__dirname, '../../logs/out.log'), `${value.id} ${response.statusCode}`);
+            fs.appendFileSync(path.resolve(__dirname, '../../logs/out.log'), `${value.id} ${response.statusCode}`);
             if (response.statusCode === 200) {
                 const imgPath = path.resolve(__dirname, `../../imgs/${value.id}.png`);
                 got.stream(url).pipe(fs.createWriteStream(imgPath));
@@ -37,7 +37,7 @@ setInterval(async () => {
                 dataSet.delete(value);
             }
         } catch (e) {
-            fs.appendFile(path.resolve(__dirname, '../../logs/out.log'), `${value.id} ${e}`);
+            fs.appendFileSync(path.resolve(__dirname, '../../logs/out.log'), `${value.id} ${e}`);
             dataSet.delete(value);
         }
     });
