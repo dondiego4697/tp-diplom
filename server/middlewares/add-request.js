@@ -24,15 +24,19 @@ const smtpTransport = nodeMailer.createTransport({
 const dataSet = new Set();
 setInterval(async () => {
     dataSet.forEach(async (value) => {
-        const url = getStatusUrl(value.id);
-        const response = await got.get(url);
-        fs.appendFile(path.resolve(__dirname, '../../logs/out.log'), `${value.id} ${response.statusCode}`);
-        if (response.statusCode === 200) {
-            const imgPath = path.resolve(__dirname, `../../imgs/${value.id}.png`);
-            got.stream(url).pipe(fs.createWriteStream(imgPath));
-            sendEmail(value.mail, imgPath, value.id)
-            dataSet.delete(value);
-        } else if (response.statusCode === 202 && response.body === 'failed') {
+        try {
+            const url = getStatusUrl(value.id);
+            const response = await got.get(url);
+            fs.appendFile(path.resolve(__dirname, '../../logs/out.log'), `${value.id} ${response.statusCode}`);
+            if (response.statusCode === 200) {
+                const imgPath = path.resolve(__dirname, `../../imgs/${value.id}.png`);
+                got.stream(url).pipe(fs.createWriteStream(imgPath));
+                sendEmail(value.mail, imgPath, value.id)
+                dataSet.delete(value);
+            } else if (response.statusCode === 202 && response.body === 'failed') {
+                dataSet.delete(value);
+            }
+        } catch (e) {
             dataSet.delete(value);
         }
     });
