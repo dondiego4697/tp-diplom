@@ -37,6 +37,7 @@ setInterval(async () => {
                 dataSet.delete(value);
             }
         } catch (e) {
+            fs.appendFile(path.resolve(__dirname, '../../logs/out.log'), `${value.id} ${e}`);
             dataSet.delete(value);
         }
     });
