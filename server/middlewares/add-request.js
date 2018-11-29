@@ -41,9 +41,9 @@ setInterval(async () => {
                 dataSet.delete(value);
             }
         } catch (e) {
-            writeLog(`${value.id} ${e}, ${url}`, 'Sorry, smth wrong with our service :(');
+            writeLog(`${value.id} ${e}, ${url}`);
             dataSet.delete(value);
-            sendEmail(value.mail, imgPath, value.id);
+            sendEmail(value.mail, imgPath, value.id, 'Sorry, smth wrong with our service :(');
         }
     });
 }, 60 * 60 * 1);
