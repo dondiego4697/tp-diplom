@@ -27,8 +27,8 @@ const writeLog = (text) => {
 const dataSet = new Set();
 setInterval(async () => {
     dataSet.forEach(async (value) => {
+        const url = getStatusUrl(value.id);
         try {
-            const url = getStatusUrl(value.id);
             const response = await got.get(url);
             writeLog(`${value.id} ${response.statusCode}`);
             if (response.statusCode === 200) {
