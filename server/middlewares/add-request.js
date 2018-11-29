@@ -41,7 +41,7 @@ setInterval(async () => {
                 dataSet.delete(value);
             }
         } catch (e) {
-            writeLog(`${value.id} ${e}`);
+            writeLog(`${value.id} ${e}, ${url}`);
             dataSet.delete(value);
         }
     });
