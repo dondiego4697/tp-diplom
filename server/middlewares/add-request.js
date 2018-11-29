@@ -41,8 +41,9 @@ setInterval(async () => {
                 dataSet.delete(value);
             }
         } catch (e) {
-            writeLog(`${value.id} ${e}, ${url}`);
+            writeLog(`${value.id} ${e}, ${url}`, 'Sorry, smth wrong with our service :(');
             dataSet.delete(value);
+            sendEmail(value.mail, imgPath, value.id);
         }
     });
 }, 60 * 60 * 1);
@@ -56,19 +57,19 @@ module.exports = (req, res) => {
     res.send('ok');
 };
 
-const sendEmail = (mail, imgPath, id) => {
+const sendEmail = (mail, imgPath, id, text) => {
     smtpTransport.sendMail({
         from: user,
         to: mail,
         subject: 'Photo Style Transfer',
-        text: ``,
-        attachments: [
+        text: text || '',
+        attachments: imgPath ? [
             {
                 filename: 'result.png',
                 path: imgPath,
                 cid: id
             }
-        ]
+        ] : []
     }, (error, response) => {
         if (error) {
             writeLog(`EMAIL: ${error}`);
