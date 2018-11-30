@@ -3,6 +3,14 @@
 .title-block {
     width: 100%;
     height: 300px;
+
+    & h3 {
+        font: 30px 'Montserrat';
+        text-align: center;
+        color: #BD0034;
+
+        text-shadow: rgb(255, 255, 255) 1px 0px 0px, rgb(255, 255, 255) 0.540302px 0.841471px 0px, rgb(255, 255, 255) -0.416147px 0.909297px 0px, rgb(255, 255, 255) -0.989992px 0.14112px 0px, rgb(255, 255, 255) -0.653644px -0.756802px 0px, rgb(255, 255, 255) 0.283662px -0.958924px 0px, rgb(255, 255, 255) 0.96017px -0.279415px 0px;
+    }
 }
 
 .title-block h2 {
@@ -57,34 +65,34 @@
 .text-copy {
     fill: none;
     stroke: white;
-    stroke-dasharray: 6% 29%;
+    stroke-dasharray: 20% 29%;
     stroke-width: 6px;
     stroke-dashoffset: 0%;
     animation: stroke-offset 10.5s infinite linear;
 }
 
 .text-copy:nth-child(1){
-    stroke: #4D163D;
+    stroke: #38182E;
     animation-delay: -1;
 }
 
 .text-copy:nth-child(2){
-    stroke: #840037;
+    stroke: #660c31;
     animation-delay: -2s;
 }
 
 .text-copy:nth-child(3){
-    stroke: #BD0034;
+    stroke: #a3133b;
     animation-delay: -3s;
 }
 
 .text-copy:nth-child(4){
-    stroke: #BD0034;
+    stroke: #960a31;
     animation-delay: -4s;
 }
 
 .text-copy:nth-child(5){
-    stroke: #FDB731;
+    stroke: #f7b122;
     animation-delay: -5s;
 }
 
