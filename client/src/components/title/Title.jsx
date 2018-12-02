@@ -23,7 +23,7 @@ export class Title extends React.Component {
                         <use href="#s-text" className="text-copy"/>
                     </g>
                 </svg >
-                <h3>Get your high-quality idol photo</h3>
+                <h3>Get your high-quality photo in your idol's style</h3>
             </div >
         );
     }
