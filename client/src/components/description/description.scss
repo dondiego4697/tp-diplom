@@ -1,0 +1,87 @@
+.description {
+    width: 100%;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+
+    h1 {
+        font-family: fontSize4;
+        text-align: center;
+        color: #2AAFC0;
+        margin: 25px 0;
+        font-size: 60px;
+        font-weight: 500;
+        word-spacing: 2px;
+        letter-spacing: 2px;
+    }
+
+    p {
+        font-family: fontSize2;
+        font-weight: 200;
+        font-size: 25px;
+        text-align: center;
+        letter-spacing: 4px;
+        -webkit-animation-delay: .2s;
+        animation-delay: .2s;
+        line-height: 1.2;
+        box-sizing: border-box;
+        outline: none;
+        list-style: none;
+        word-wrap: break-word;
+        padding: 0;
+        display: block;
+        -webkit-margin-before: 1.33em;
+        -webkit-margin-after: 1.33em;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+        color: black;
+        margin: 0;
+    }
+
+    .row {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+
+        .col-sm-4 {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 33.333333%;
+            flex: 0 0 33.333333%;
+            max-width: 33.333333%;
+
+            .item {
+                padding: 20px;
+                // box-shadow: 0px 0px 30px rgba(0,0,0,.1);
+                // background: #fff;
+                text-align: center!important;
+
+                img {
+                    box-shadow: 0px 5px 30px #777;
+                    border-radius: 4px;
+                    width: 100%;
+                    height: auto;
+                    vertical-align: middle;
+                    border-style: none;
+                }
+
+                h6 {
+                    margin-top: 40px !important;
+                    margin: 0;
+                    font-weight: 600;
+                    font-size: 30px;
+                    margin-bottom: .5rem;
+                    font-family: fontSize3;
+                    font-weight: 500;
+                    line-height: 1.2;
+                    color: inherit;
+                }
+            }
+        }
+    }
+}

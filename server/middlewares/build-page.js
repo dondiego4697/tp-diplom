@@ -14,9 +14,10 @@ module.exports = (req, res) => {
                 scripts: formPath(name, 'js')
             },
             fonts: {
-                regular: '/build/res/fonts/Heebo-Regular.ttf',
-                thin: '/build/res/fonts/Heebo-Thin.ttf',
-                medium: '/build/res/fonts/Heebo-Medium.ttf'
+                size1: '/build/res/fonts/font-size-1.ttf',
+                size2: '/build/res/fonts/font-size-2.ttf',
+                size3: '/build/res/fonts/font-size-3.ttf',
+                size4: '/build/res/fonts/font-size-4.ttf'
             }
         },
         global: {

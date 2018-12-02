@@ -1,0 +1,68 @@
+.header {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+
+    #particles-js {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: -5%;
+        width: 110%;
+        height: 100px;
+        background-image: url(/build/res/img/wave.svg);
+        background-size: cover;
+        z-index: 7;
+    }
+
+    &-container {
+        z-index: 10;
+        margin: auto;
+        text-align: center;
+
+        h1 {
+            font-family: fontSize4;
+            margin: 10px 0;
+            font-size: 60px;
+            font-weight: 500;
+            word-spacing: 2px;
+            letter-spacing: 2px;
+            -webkit-animation-delay: .6s;
+            animation-delay: .6s;
+            color: #fff;
+        }
+
+        h4 {
+            font-family: fontSize2;
+            font-weight: 200;
+            font-size: 30px;
+            letter-spacing: 4px;
+            -webkit-animation-delay: .2s;
+            animation-delay: .2s;
+            line-height: 1.2;
+            box-sizing: border-box;
+            outline: none;
+            list-style: none;
+            word-wrap: break-word;
+            padding: 0;
+            display: block;
+            -webkit-margin-before: 1.33em;
+            -webkit-margin-after: 1.33em;
+            -webkit-margin-start: 0px;
+            -webkit-margin-end: 0px;
+            color: #fff;
+            margin: 0;
+        }
+    }
+}

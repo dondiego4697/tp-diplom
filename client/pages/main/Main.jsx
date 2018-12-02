@@ -1,20 +1,18 @@
 import React from 'react';
 import './main.scss';
-import { FileUploader } from '../../src/components/file-uploader/FileUploader.jsx';
+import { Header } from '../../src/components/header/Header.jsx';
 import { Button } from '../../src/components/button/Button.jsx';
 import { EditText } from '../../src/components/edit-text/EditText.jsx';
-import { Title } from '../../src/components/title/Title.jsx';
-import { ToastContainer, ToastStore } from 'react-toasts';
 import * as axios from 'axios';
-import BlockUi from 'react-block-ui';
 import 'react-block-ui/style.css';
+import { Description } from '../../src/components/description/Description.jsx';
 
 
 export default class Main extends React.Component {
     constructor(props) {
         super(props);
 
-        this._fileUploaderProps = {
+        /* this._fileUploaderProps = {
             baseColor: 'gray',
             activeColor: 'green',
             overlayColor: 'rgba(255,255,255,0.3)'
@@ -30,30 +28,27 @@ export default class Main extends React.Component {
         this._onSubmit = this._onSubmit.bind(this);
         this._onChange = this._onChange.bind(this);
         this._onBaseImageChange = this._onBaseImageChange.bind(this);
-        this._onStyleImageChange = this._onStyleImageChange.bind(this);
+        this._onStyleImageChange = this._onStyleImageChange.bind(this); */
     }
 
     render() {
-        return (<div style={{ width: '100%', height: '100%' }}>
-            <BlockUi style={{ display: 'flex', flexDirection: 'column', height: '100%' }} tag="div" blocking={this.state.blocking}>
-                <Title />
-                <div className="main-panel">
-                    <div className='main-panel_img-container'>
-                        <FileUploader title="BASE IMAGE" id="imgBase" className='uploader-right'
-                            props={this._fileUploaderProps} onChange={this._onBaseImageChange} />
-                        <FileUploader title="STYLE" id="imgStyle" className='uploader-left'
-                            props={this._fileUploaderProps} onChange={this._onStyleImageChange} />
-                    </div>
-                    <ToastContainer store={ToastStore} position={ToastContainer.POSITION.TOP_RIGHT} lightBackground />
+        return (<div>
+            <div id="main-section">
+                <div className="container">
+                    <Header />
                 </div>
-                <EditText ph='email' onChange={this._onChange} style={{ position: 'fixed', bottom: 30, right: 131 }} />
-                <Button value='SEND' style={{ position: 'fixed', bottom: 15, right: 15 }}
-                    onClick={this._onSubmit} />
-            </BlockUi>
+                <div className="bg-container"></div>
+            </div>
+            <div id="description-section">
+                <Description/>
+            </div>
+            <div id="try-section">
+
+            </div>
         </div>);
     }
 
-    _toggleBlocking() {
+    /* _toggleBlocking() {
         this.setState({
             blocking: !this.state.blocking
         });
@@ -117,5 +112,5 @@ export default class Main extends React.Component {
         this.setState({
             style: el.getFileObject()
         });
-    }
+    } */
 }

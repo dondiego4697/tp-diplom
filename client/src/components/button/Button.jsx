@@ -1,5 +1,7 @@
 import React from 'react';
 import './button.scss';
+import XButton from 'react-button-component';
+
 
 export class Button extends React.Component {
     constructor(props) {
@@ -9,13 +11,11 @@ export class Button extends React.Component {
     render() {
         return (
             <div className='button-container'>
-                <div className='button-container__align'>
-                    <button onClick={this.props.onClick}
-                        style={this.props.style}
-                        className='button-container_button'>
-                        {this.props.value}
-                    </button>
-                </div>
+                <XButton style={this.props.style} className='butn butn-bg' onClick={() => {
+                    this.props.onClick();
+                }}>
+                    <span>Let's start</span>
+                </XButton>
             </div>
         );
     }
