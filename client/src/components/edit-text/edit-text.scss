@@ -8,7 +8,6 @@
         display: inline-block;
         padding: 8px 8px;
         margin: 3px;
-        overflow: hidden;
         text-decoration: none;
         color: inherit;
         text-align: center;
@@ -37,5 +36,9 @@
 
     &__align {
         display: flex;
+
+        input {
+            // -webkit-user-select: none;
+        }
     }
 }
