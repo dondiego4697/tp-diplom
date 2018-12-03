@@ -3,31 +3,36 @@
         margin-top: 15px;
     }
     &_edit-text {
-        border: 3px solid #840037;
-        background: #FDB731;
+        border: 3px solid #2AAFC0;
+        background: white;
         display: inline-block;
         padding: 8px 8px;
         margin: 3px;
-        border-radius: 5px;
-        vertical-align: middle;
         overflow: hidden;
         text-decoration: none;
         color: inherit;
         text-align: center;
         white-space: nowrap;
-        color: #840037;
+        color: black;
         outline: none;
         height: 50px;
         width: 250px;
-        font: 15px 'Montserrat';
-        animation: button-anim 3s infinite;
-
-        @media screen and (max-width: 960px) {
-            position: relative !important;
-            right: unset !important;
-            bottom: unset !important;
-            margin: auto !important;
-        }
+        font-family: fontSize2;
+        font-weight: 200;
+        -webkit-animation-delay: .2s;
+        animation-delay: .2s;
+        line-height: 1.2;
+        box-sizing: border-box;
+        outline: none;
+        list-style: none;
+        word-wrap: break-word;
+        padding: 0;
+        display: block;
+        -webkit-margin-before: 1.33em;
+        -webkit-margin-after: 1.33em;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+        z-index: 3;
     }
 
     &__align {

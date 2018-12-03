@@ -1,4 +1,9 @@
 @import "../../src/const/const.scss";
+#main-container {
+    .block-ui {
+        z-index: 10000;
+    }
+}
 
 html, body, #main-container  {
     width: 100%;
@@ -54,7 +59,7 @@ html, body, #main-container  {
 
 #try-section {
     background: black;
-    background: linear-gradient(217deg, black, rgb(11, 64, 71));
+    background: linear-gradient(217deg, black, rgb(32, 32, 32));
     background-size: 1000% 1000%;
 
     -webkit-animation: Anim 20s ease infinite;

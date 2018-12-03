@@ -14,7 +14,7 @@ export class Button extends React.Component {
                 <XButton style={this.props.style} className='butn butn-bg' onClick={() => {
                     this.props.onClick();
                 }}>
-                    <span>Let's start</span>
+                    <span>{this.props.text}</span>
                 </XButton>
             </div>
         );

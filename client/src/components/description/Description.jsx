@@ -1,7 +1,5 @@
 import React from 'react';
 import './description.scss';
-import { Button } from '../button/Button.jsx';
-import scrollToElement from 'scroll-to-element';
 
 export class Description extends React.Component {
     constructor(props) {

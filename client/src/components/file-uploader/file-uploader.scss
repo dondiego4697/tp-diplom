@@ -1,39 +1,38 @@
-@keyframes uploader-border {
-  0% { border: 3px #FDB731 solid; }
-  50% { border: 3px #840037 solid; }
-  100% { border: 3px #FDB731 solid;}
-}
-
-.uploader-left {
-  @media screen and (max-width: 960px) {
-    margin-top: 10px !important;
-  }
-}
 .uploader {
    overflow: hidden;
    align-items: center;
-   background-color: rgba(132, 0, 55, 0.3);
+   background-color: rgb(230, 230, 230);
    cursor: pointer;
    display: flex;
    justify-content: center;
-   border-radius: 50%;
-   border: 3px #840037 solid;
+   border: 3px #2AAFC0 solid;
    position: relative;
    height: 300px;
    width: 300px;
    margin: 25px auto;
-   animation: uploader-border 3s infinite;
    min-height: 300px;
 
-   @media screen and (max-width: 960px) {
-    margin: auto;
-  }
-
    & .loader-title {
-      color: white;
-      font: 15px 'Montserrat';
-      position: absolute;
-      bottom: 25px;
+      font-family: fontSize2;
+      font-weight: 200;
+      font-size: 25px;
+      text-align: center;
+      letter-spacing: 4px;
+      -webkit-animation-delay: .2s;
+      animation-delay: .2s;
+      line-height: 1.2;
+      box-sizing: border-box;
+      outline: none;
+      list-style: none;
+      word-wrap: break-word;
+      padding: 0;
+      display: block;
+      -webkit-margin-before: 1.33em;
+      -webkit-margin-after: 1.33em;
+      -webkit-margin-start: 0px;
+      -webkit-margin-end: 0px;
+      color: black;
+      margin: 0;
    }
 
    input {
