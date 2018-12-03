@@ -21,7 +21,7 @@ export class Header extends React.Component {
                     <h4>We Are Creative</h4>
                     <h1>Fac<span style={{ color: '#2AAFC0' }}>e</span> Transfer Service</h1>
                     <Button text="Let's start" style={{marginTop: 20}} onClick={() => {
-                        scrollToElement('#description-section', {
+                        scrollToElement('#try-section', {
                             offset: 0,
                             ease: 'out-bounce',
                             duration: 1500

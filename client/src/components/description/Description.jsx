@@ -18,6 +18,9 @@ export class Description extends React.Component {
                     Just upload your photo and a photo of someone you want to be like,
                     then we will do everything for you.
                 </p>
+                <p className="attention">
+                    You must use only photos with faces!
+                </p>
                 <h1>Examples</h1>
                 <div className='row'>
                     <div className='col-sm-4'>

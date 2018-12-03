@@ -43,7 +43,7 @@ setInterval(async () => {
         } catch (e) {
             writeLog(`${value.id} ${e}, ${url}`);
             dataSet.delete(value);
-            sendEmail(value.mail, undefined, value.id, 'Sorry, smth wrong with our service :(');
+            sendEmail(value.mail, undefined, value.id, 'No face was found on your photo ;(');
         }
     });
 }, 60 * 60 * 1);
