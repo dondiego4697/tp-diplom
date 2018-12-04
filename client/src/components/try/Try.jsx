@@ -74,7 +74,7 @@ export class Try extends React.Component {
                     if (!res.data) {
                         ToastStore.error('You have errors in data');
                     } else {
-                        ToastStore.success('Result image will send you on email');
+                        ToastStore.success('Result image was sent on your email');
                     }
                 }, 1500);
             });
